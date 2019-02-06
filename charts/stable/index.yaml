@@ -3,11 +3,21 @@ entries:
   db2:
   - apiVersion: v1
     appVersion: "1.0"
-    created: 2019-02-05T16:36:49.955170118-08:00
+    created: 2019-02-05T21:34:13.032737304-08:00
     description: A Helm chart for Kubernetes
     digest: ca57d9e3ff93a729eb5e4e17bbe269a9d9ba72385324d1647696ac6b7fd2fb57
     name: db2
     urls:
     - https://raw.githubusercontent.com/tinnvo/hrepo/master/charts/stable/db2-0.2.1.tgz
     version: 0.2.1
-generated: 2019-02-05T16:36:49.954781885-08:00
+  steom:
+  - apiVersion: v1
+    appVersion: "1.0"
+    created: 2019-02-05T21:34:13.032961989-08:00
+    description: A steom Helm chart for Kubernetes
+    digest: 2cf2a7ed1a5978390ea82f5df48131b01120a34f74159fdcd330b806dd16c527
+    name: steom
+    urls:
+    - https://raw.githubusercontent.com/tinnvo/hrepo/master/charts/stable/steom-0.1.0.tgz
+    version: 0.1.0
+generated: 2019-02-05T21:34:13.032242843-08:00

@@ -1,0 +1,2 @@
+1. Run the command below to mount a host directory to minikube:
+  minikube mount <directory to mount>:{{ .Values.paths.minikubeHostPath }}

@@ -1,0 +1,54 @@
+# Default values for steom.
+# This is a YAML-formatted file.
+# Declare variables to be passed into your templates.
+
+replicaCount: 1
+
+name:
+  rtName: rt
+  adName: ad
+
+rtImage:
+  repository: registry.gitlab.com/tinnvo/oms/rt
+  tag: v2
+  pullPolicy: IfNotPresent
+  stdin: true
+  tty: true
+
+adImage:
+  repository: registry.gitlab.com/tinnvo/oms/adc
+  tag: v2
+  pullPolicy: IfNotPresent
+  stdin: true
+  tty: true
+
+restartPolicy: Always
+
+volume:
+  pvName: task-pv-storage
+  claimName: task-pv-claim
+  volNameForShared: shared
+
+pv:
+  accessModes: ReadWriteMany
+  storage: 3Gi
+
+paths:
+  rt: /sterling
+  sharedMountPath: /shared
+  minikubeHostPath: /home/docker/shared
+
+nameOverride: ""
+fullnameOverride: ""
+
+service:
+  type: ClusterIP
+  port: 80
+
+resources: {}
+
+nodeSelector: {}
+
+tolerations: []
+
+affinity: {}

@@ -1,0 +1,33 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: {{ .Values.name.adName }}
+spec:
+  replicas: {{ .Values.replicaCount }}
+  template:
+    metadata:
+      labels:
+        app: {{ .Values.name.adName }}
+    spec:
+      containers:
+      - image: "{{ .Values.adImage.repository }}:{{ .Values.adImage.tag }}"
+        name: {{ .Values.name.adName }}
+        stdin: {{ .Values.adImage.stdin }}
+        tty: {{ .Values.adImage.tty }}
+        imagePullPolicy: {{ .Values.adImage.pullPolicy }}
+        volumeMounts:
+          - name: {{ .Values.volume.pvName }}
+            mountPath: {{ .Values.paths.rt }}
+          - name: {{ .Values.volume.volNameForShared }}
+            mountPath: {{ .Values.paths.sharedMountPath }} 
+      restartPolicy: {{ .Values.restartPolicy }}
+      volumes:
+        - name: {{ .Values.volume.pvName }}
+          persistentVolumeClaim:
+            claimName: {{ .Values.volume.claimName }}
+        - name: {{ .Values.volume.volNameForShared }}
+          hostPath:
+            path: {{ .Values.paths.minikubeHostPath }}
+      imagePullSecrets:
+        - name: regcred
+status: {}
