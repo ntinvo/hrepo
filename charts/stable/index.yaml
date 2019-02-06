@@ -3,11 +3,11 @@ entries:
   db2:
   - apiVersion: v1
     appVersion: "1.0"
-    created: 2019-02-04T20:56:16.86227436-08:00
+    created: 2019-02-05T16:36:49.955170118-08:00
     description: A Helm chart for Kubernetes
-    digest: ee59cffdabf41d9eca607aa6279b67fa6386b76f25574a2e3512705d83e868d1
+    digest: ca57d9e3ff93a729eb5e4e17bbe269a9d9ba72385324d1647696ac6b7fd2fb57
     name: db2
     urls:
-    - db2-0.2.0.tgz
-    version: 0.2.0
-generated: 2019-02-04T20:56:16.861904793-08:00
+    - https://raw.githubusercontent.com/tinnvo/hrepo/master/charts/stable/db2-0.2.1.tgz
+    version: 0.2.1
+generated: 2019-02-05T16:36:49.954781885-08:00
