@@ -1,0 +1,21 @@
+# Default values for db2.
+# This is a YAML-formatted file.
+# Declare variables to be passed into your templates.
+
+replicaCount: 1
+
+image:
+  repository: registry.gitlab.com/tinnvo/oms/db2
+  tag: latest
+  pullPolicy: IfNotPresent
+  imagePullSecrets: regcred
+
+db2pass: db2pass
+
+nameOverride: ""
+fullnameOverride: ""
+
+service:
+  type: NodePort
+  nodePort: 31234
+  port: 50000

@@ -1,0 +1,18 @@
+1. Get the pod name by running these commands:
+  export NODE_PORT=$(kubectl get --namespace {{ .Release.Namespace }} -o jsonpath="{.spec.ports[0].nodePort}" services {{ include "db2.fullname" . }})
+  export NODE_IP=$(kubectl get nodes --namespace {{ .Release.Namespace }} -o jsonpath="{.items[0].status.addresses[0].address}")
+  export POD_NAME=$(kubectl get pods --namespace {{ .Release.Namespace }} -l "db.name={{ include "db2.name" . }},db.instance={{ .Release.Name }}" -o jsonpath="{.items[0].metadata.name}")
+
+  echo http://$NODE_IP:$NODE_PORT
+  echo POD_NAME: $POD_NAME
+
+2. To list all of the databases:
+  kubectl exec $POD_NAME -- /db2.sh -l
+
+3. To create a new database:
+  kubectl exec $POD_NAME -- /db2.sh -c <database/schema name>
+
+4. To drop an existing database:
+  kubectl exec $POD_NAME -- /db2.sh -c <database name>
+
+5. The service is exposed on port {{ .Values.service.nodePort }}

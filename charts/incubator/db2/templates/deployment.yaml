@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ include "db2.fullname" . }}
+  labels:
+    db.name: {{ include "db2.name" . }}
+    helm.sh/chart: {{ include "db2.chart" . }}
+    db.instance: {{ .Release.Name }}
+    app.kubernetes.io/managed-by: {{ .Release.Service }}
+spec:
+  replicas: {{ .Values.replicaCount }}
+  selector:
+    matchLabels:
+      db.name: {{ include "db2.name" . }}
+      db.instance: {{ .Release.Name }}
+  template:
+    metadata:
+      labels:
+        db.name: {{ include "db2.name" . }}
+        db.instance: {{ .Release.Name }}
+    spec:
+      containers:
+        - name: {{ .Chart.Name }}
+          image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
+          env:
+            - name: DB2INST1_PASSWORD
+              value: {{ .Values.db2pass }}
+          imagePullPolicy: {{ .Values.image.pullPolicy }}
+          ports:
+              - containerPort: 50000
+      imagePullSecrets:
+        - name: regcred
