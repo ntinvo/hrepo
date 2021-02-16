@@ -3,17 +3,17 @@ entries:
   db2:
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2021-02-16T11:59:56.041016056-05:00"
+    created: "2021-02-16T12:06:30.713885945-05:00"
     description: A Helm chart for Kubernetes
     digest: ca57d9e3ff93a729eb5e4e17bbe269a9d9ba72385324d1647696ac6b7fd2fb57
     name: db2
     urls:
-    - https://raw.githubusercontent.com/tinnvo/hrepo/master/charts/stable/db2-0.2.1.tgz
+    - https://raw.githubusercontent.com/ntinvo/hrepo/master/charts/stable/db2-0.2.1.tgz
     version: 0.2.1
   ibm-oms-pro-prod:
   - apiVersion: v2
     appVersion: 10.0.0
-    created: "2021-02-16T11:59:56.056171976-05:00"
+    created: "2021-02-16T12:06:30.728378214-05:00"
     dependencies:
     - alias: sch
       name: ibm-sch
@@ -47,16 +47,16 @@ entries:
     name: ibm-oms-pro-prod
     type: application
     urls:
-    - https://raw.githubusercontent.com/tinnvo/hrepo/master/charts/stable/ibm-oms-pro-prod-5.1.2.tgz
+    - https://raw.githubusercontent.com/ntinvo/hrepo/master/charts/stable/ibm-oms-pro-prod-5.1.2.tgz
     version: 5.1.2
   steom:
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2021-02-16T11:59:56.056797921-05:00"
+    created: "2021-02-16T12:06:30.728975291-05:00"
     description: A steom Helm chart for Kubernetes
     digest: 2cf2a7ed1a5978390ea82f5df48131b01120a34f74159fdcd330b806dd16c527
     name: steom
     urls:
-    - https://raw.githubusercontent.com/tinnvo/hrepo/master/charts/stable/steom-0.1.0.tgz
+    - https://raw.githubusercontent.com/ntinvo/hrepo/master/charts/stable/steom-0.1.0.tgz
     version: 0.1.0
-generated: "2021-02-16T11:59:56.040554479-05:00"
+generated: "2021-02-16T12:06:30.713256987-05:00"
